@@ -28,6 +28,7 @@ def get_son (poème,dico):
                 break
         if resultat == True:
             break
+
     return key
 for phrase in poème:
     print(get_son(phrase, dico))
@@ -36,12 +37,11 @@ for phrase in poème:
 print(listerime)
 
 
-nombrerime = 0
 
-def creer_rime(listerime,nombrerime):
-    for i in listerime:
+def creer_rime(listerime):
+    nombrerime = 0
+    for i in range(len(listerime)-1):
         if listerime[i] == listerime[i+1]:
             nombrerime += 1
-            print("Il y a",nombrerime,"rime(s)" )
-
-creer_rime(listerime,nombrerime)
+        return nombrerime
+print(creer_rime(listerime))
